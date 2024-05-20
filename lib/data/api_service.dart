@@ -59,7 +59,8 @@ class ApiServiceIpml extends ApiService {
     }
 
     final response = await http.post(
-      Uri.parse('$baseUrl/completions'),
+      Uri.parse('$baseUrl/chat/completions'),
+      //Uri.parse('https://api.openai.com/v1/chat/completions'),
       headers: {
         'Authorization': 'Bearer $keyReponse',
         'Content-Type': 'application/json'
@@ -67,7 +68,11 @@ class ApiServiceIpml extends ApiService {
       body: jsonEncode(
         {
           "model": _dataSetting.currentModel.id,
-          "prompt": message,
+          //"prompt": message,
+          "messages": [
+            {'role': 'user', 'content': 'ABC'},
+            {'role': 'system', 'content': 'DEF'},
+          ],
           "max_tokens": newKey == null ? 600 : 5,
         },
       ),
