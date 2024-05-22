@@ -1,5 +1,5 @@
 import 'package:chatgpt/data/methods.dart';
-import 'package:chatgpt/model/base_model.dart.dart';
+import 'package:chatgpt/model/base_model.dart';
 
 class LanguageListenModel extends BaseModel {
   LanguageListenModel(super.data);

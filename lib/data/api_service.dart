@@ -31,7 +31,7 @@ class ApiServiceIpml extends ApiService {
       Map jsonResponse = jsonDecode(response.body);
 
       if (jsonResponse['error'] != null) {
-        throw HttpException(jsonResponse['error']["message"]);
+        throw HttpException(jsonResponse['error']['message']);
       }
 
       List<Map<String, Object?>> data = Methods.getList(jsonResponse, 'data');
@@ -59,7 +59,7 @@ class ApiServiceIpml extends ApiService {
     }
 
     final response = await http.post(
-      Uri.parse('$baseUrl/completions'),
+      Uri.parse('$baseUrl/chat/completions'),
       headers: {
         'Authorization': 'Bearer $keyReponse',
         'Content-Type': 'application/json'
@@ -67,7 +67,9 @@ class ApiServiceIpml extends ApiService {
       body: jsonEncode(
         {
           "model": _dataSetting.currentModel.id,
-          "prompt": message,
+          "messages": [
+            {'role': 'user', 'content': message},
+        ],
           "max_tokens": newKey == null ? 600 : 5,
         },
       ),
@@ -80,11 +82,11 @@ class ApiServiceIpml extends ApiService {
     try {
       Map json = await _reponseChat(message: message);
       if (json['error'] != null) {
-        throw HttpException(json['error']["message"]);
+        throw HttpException(json['error']['message']);
       }
 
       Map<String, Object?> data = Methods.getList(json, 'choices').first;
-      String msg = Methods.getString(data, 'text');
+      String msg = Methods.getString(data, 'content');
       //Biên dịch để có thể đọc bằng tiếng việt
       String msgUTF8 = utf8.decode(msg.runes.toList()).toString().trim();
 
