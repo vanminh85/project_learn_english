@@ -18,7 +18,7 @@ class SettingData {
 }
 
 ModelsModel _defaultModelsModel = ModelsModel({
-  'id': 'gpt-3.5-turbo',
+  'id': 'gpt-4-0613',
   'created': DateTime.now(),
-  'root': 'gpt-3.5-turbo',
+  'root': 'gpt-4-0613',
 });
