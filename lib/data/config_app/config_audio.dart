@@ -127,53 +127,23 @@ class ConfigAudio {
   }
 }
 
-LanguageListenModel _defaultLanguageListen = _defaultListLanguageListen[3];
+LanguageListenModel _defaultLanguageListen = _defaultListLanguageListen[1];
 
 List<LanguageListenModel> _defaultListLanguageListen = [
   {
     'name': 'vi-VN-language',
     'locale': 'vi-VN',
-    'displayName': 'Tiếng Việt',
+    'displayName': 'Vietnamese',
   },
   {
     'name': 'en-us-x-tpf-local',
     'locale': 'en-US',
-    'displayName': 'Tiếng Mỹ 1',
-  },
-  {
-    'name': 'en-us-x-sfg-network',
-    'locale': 'en-US',
-    'displayName': 'Tiếng Mỹ 2'
-  },
-  {
-    'name': 'en-us-x-tpd-network',
-    'locale': 'en-US',
-    'displayName': 'Tiếng Mỹ 3'
-  },
-  {
-    'name': 'en-us-x-tpc-network',
-    'locale': 'en-US',
-    'displayName': 'Tiếng Mỹ 4'
+    'displayName': 'English-US',
   },
   {
     'name': 'en-gb-x-gba-local',
     'locale': 'en-GB',
-    'displayName': 'Tiếng Anh 1'
-  },
-  {
-    'name': 'en-gb-x-gbb-network',
-    'locale': 'en-GB',
-    'displayName': 'Tiếng Anh 2'
-  },
-  {
-    'name': 'en-gb-x-rjs-local',
-    'locale': 'en-GB',
-    'displayName': 'Tiếng Anh 3'
-  },
-  {
-    'name': 'en-gb-x-gbg-local',
-    'locale': 'en-GB',
-    'displayName': 'Tiếng Anh 4'
+    'displayName': 'English-UK'
   },
 ].map((e) => LanguageListenModel(e)).toList();
 
@@ -182,14 +152,14 @@ LanguageSpeakModel _defaulLanguageSpeak = _defaultListLanguageSpeak.first;
 List<LanguageSpeakModel> _defaultListLanguageSpeak = [
   {
     'locale': 'en_US',
-    'name': 'Tiếng Mỹ',
+    'name': 'English-US',
   },
   {
     'locale': 'vi_VN',
-    'name': 'Tiếng Việt',
+    'name': 'Vietnamese',
   },
   {
     'locale': 'en_GB',
-    'name': 'Tiếng Anh',
-  }
+    'name': 'English-UK',
+  },
 ].map((e) => LanguageSpeakModel(e)).toList();

@@ -43,7 +43,7 @@ class BottomSheetSetting extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _text(
-              text: 'Nếu thấy hay thì ủng hộ mình nhé 😎',
+              text: ' 😎',
               colour: Colors.white,
               fontSize: 18),
           const SizedBox(height: 40),

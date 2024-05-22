@@ -43,17 +43,17 @@ class ChatViewLoading extends StatelessWidget {
             builder: (_, snapshot) {
               switch (snapshot.connectionState) {
                 case ConnectionState.waiting:
-                  return baseLoading('Đang tải....');
+                  return baseLoading('Loading....');
                 case ConnectionState.done:
                   if (snapshot.hasError) {
-                    return baseLoading('Lỗi load ...');
+                    return baseLoading('Error ...');
                   } else {
                     updateData(snapshot.data!, context);
                     return child;
                   }
 
                 default:
-                  return baseLoading('Lỗi load ...');
+                  return baseLoading('Error ...');
               }
             },
           );

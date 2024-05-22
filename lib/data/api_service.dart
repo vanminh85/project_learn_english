@@ -60,7 +60,6 @@ class ApiServiceIpml extends ApiService {
 
     final response = await http.post(
       Uri.parse('$baseUrl/chat/completions'),
-      //Uri.parse('https://api.openai.com/v1/chat/completions'),
       headers: {
         'Authorization': 'Bearer $keyReponse',
         'Content-Type': 'application/json'
@@ -68,11 +67,10 @@ class ApiServiceIpml extends ApiService {
       body: jsonEncode(
         {
           "model": _dataSetting.currentModel.id,
-          //"prompt": message,
           "messages": [
-            {'role': 'user', 'content': 'ABC'},
-            {'role': 'system', 'content': 'DEF'},
-          ],
+            {'role': 'user', 'content': 'message'},
+            //{'role': 'system', 'content': message},
+        ],
           "max_tokens": newKey == null ? 600 : 5,
         },
       ),
@@ -89,7 +87,8 @@ class ApiServiceIpml extends ApiService {
       }
 
       Map<String, Object?> data = Methods.getList(json, 'choices').first;
-      String msg = Methods.getString(data, 'text');
+      //String msg = Methods.getString(data, 'content');
+      String msg = data['choices'] as String;
       //Biên dịch để có thể đọc bằng tiếng việt
       String msgUTF8 = utf8.decode(msg.runes.toList()).toString().trim();
 

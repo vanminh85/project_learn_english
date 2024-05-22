@@ -25,20 +25,21 @@ class ChatRow extends StatelessWidget {
               chatModel.isUserChat
                   ? AssetsManager.userImage
                   : AssetsManager.botImage,
-              height: 30,
-              width: 30,
+              height: 40,
+              width: 40,
             ),
             const SizedBox(
               width: 8,
             ),
             Expanded(
                 child: TextWidget(
-              label: chatModel.msg,
+                label: chatModel.msg,
+                  color: Colors.cyan,
             )),
             IconButton(
                 onPressed: onPressed, icon: const Icon(
               Icons.volume_down,
-            color: Colors.cyan,
+            color: Colors.white,
             ))
           ],
         ),
