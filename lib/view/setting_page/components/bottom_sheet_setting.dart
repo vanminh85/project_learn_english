@@ -1,3 +1,4 @@
+/*
 import 'package:chatgpt/view/resources/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -42,18 +43,8 @@ class BottomSheetSetting extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _text(
-              text: ' 😎',
-              colour: Colors.white,
-              fontSize: 18),
           const SizedBox(height: 40),
-          CircleAvatar(
-            radius: 80,
-            child: Image.asset(AssetsManager.support),
-          ),
           const SizedBox(height: 50),
-          rowText(context,
-              label: 'Momo', text: '', valueCopy: ''),
           const SizedBox(height: 24),
           rowText(context,
               label: '',
@@ -105,3 +96,4 @@ class BottomSheetSetting extends StatelessWidget {
     );
   }
 }
+*/
