@@ -67,9 +67,10 @@ class ApiServiceIpml extends ApiService {
       body: jsonEncode(
         {
           "model": _dataSetting.currentModel.id,
-          "messages": [
+          'messages': [
+            {'role': 'system', 'content': ' '},
             {'role': 'user', 'content': message},
-        ],
+          ],
           "max_tokens": newKey == null ? 600 : 5,
         },
       ),
@@ -86,7 +87,8 @@ class ApiServiceIpml extends ApiService {
       }
 
       Map<String, Object?> data = Methods.getList(json, 'choices').first;
-      String msg = Methods.getString(data, 'content');
+      String msg = json['choices'][0]['message']['content'];
+
       //Biên dịch để có thể đọc bằng tiếng việt
       String msgUTF8 = utf8.decode(msg.runes.toList()).toString().trim();
 

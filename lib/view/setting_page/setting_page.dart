@@ -118,21 +118,21 @@ class SettingPage extends ModalRoute {
             controller.autoChatReponse = v;
           },
           label: 'Tự động phản hồi âm thanh:'),
-      support(context)
+      //support(context)
     ];
   }
 
-  Widget support(BuildContext context) {
+ /* Widget support(BuildContext context) {
     return SettingButton(
         onPressed: () {
           showBottom(context);
         },
         text: 'Ủng hộ');
-  }
+  }*/
 
 
 
-  void showBottom(BuildContext context) {
+  /*void showBottom(BuildContext context) {
 
     showModalBottomSheet<void>(
         context: context,
@@ -143,7 +143,7 @@ class SettingPage extends ModalRoute {
         builder: (context) {
           return const BottomSheetSetting();
         });
-  }
+  }*/
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,
