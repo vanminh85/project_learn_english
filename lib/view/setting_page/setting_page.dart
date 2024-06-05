@@ -37,7 +37,13 @@ class SettingPage extends ModalRoute {
     List<Widget> list = _listWidget(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cài đặt'),
+        title: const Text(
+          'Setting',
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.red,
+          ),
+          ),
       ),
       body: ListView.separated(
           padding: const EdgeInsets.all(16),
