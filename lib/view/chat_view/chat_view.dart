@@ -73,8 +73,41 @@ class _ChatViewState extends State<ChatView> {
         padding: const EdgeInsets.all(8.0),
         child: Image.asset(AssetsManager.openaiLogo),
       ),
-      title: const Text("ChatGPT"),
+      title: const Text(
+        "Learn English",
+        style: TextStyle(
+          fontSize: 12,
+          color: Colors.white // Specify the color here
+        ),
+      ),
       actions: [
+        IconButton(
+          onPressed: () async {
+            // Handle Print action
+          },
+          icon: const Icon(
+            Icons.print,
+            color: Colors.white,
+          ),
+        ),
+        IconButton(
+          onPressed: () async {
+            // Handle Save action
+          },
+          icon: const Icon(
+            Icons.save,
+            color: Colors.white,
+          ),
+        ),
+        IconButton(
+          onPressed: () async {
+            // Handle Open action
+          },
+          icon: const Icon(
+            Icons.file_open,
+            color: Colors.white,
+          ),
+        ),
         IconButton(
             onPressed: () async {
               await context.read<ChatViewController>().clearChat();
@@ -144,7 +177,7 @@ class _ChatViewState extends State<ChatView> {
                     },
                     decoration: const InputDecoration.collapsed(
                         hintText: "How can I help you",
-                        hintStyle: TextStyle(color: Colors.grey)),
+                        hintStyle: TextStyle(color: Colors.brown)),
                   ),
                 ),
                 IconButton(
