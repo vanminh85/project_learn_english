@@ -20,7 +20,7 @@ class SettingButton extends StatelessWidget {
       elevation: 2,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: const BorderSide(color: Colors.black)),
+          side: const BorderSide(color: Colors.white)),
       color: color,
       child: Text(
         text,

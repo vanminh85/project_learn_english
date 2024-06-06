@@ -83,15 +83,6 @@ class _ChatViewState extends State<ChatView> {
       actions: [
         IconButton(
           onPressed: () async {
-            // Handle Print action
-          },
-          icon: const Icon(
-            Icons.print,
-            color: Colors.white,
-          ),
-        ),
-        IconButton(
-          onPressed: () async {
             // Handle Save action
           },
           icon: const Icon(
