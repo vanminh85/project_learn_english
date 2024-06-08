@@ -97,10 +97,10 @@ class _LoginViewState extends State<LoginView> {
               children: const [
                 CircularProgressIndicator(),
                 SizedBox(height: 8),
-                Text('Đang kiếm tra')
+                Text('Checking')
               ],
             )
-          : const Text('Xác nhận'),
+          : const Text('Nhập API key'),
     );
   }
 
@@ -117,7 +117,7 @@ class _LoginViewState extends State<LoginView> {
             color: Colors.white,
           ),
           label: const Text(
-            'Nhập key',
+            'API key',
             style: TextStyle(color: Colors.white70),
           ),
           hintStyle: const TextStyle(color: Colors.white24),
@@ -131,7 +131,7 @@ class _LoginViewState extends State<LoginView> {
       },
       validator: (v) {
         if (v!.length < 6) {
-          return 'Api key không hợp lệ';
+          return 'API key không hợp lệ';
         }
         return null;
       },

@@ -70,7 +70,7 @@ class _BottomSheetVoiceState extends State<BottomSheetVoice> {
     Clipboard.setData(ClipboardData(text: _lastWords));
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     SnackBar snackBar = const SnackBar(
-      content: Text('Đã copy vào bộ nhớ'),
+      content: Text('Saved to the memory'),
       backgroundColor: Colors.black,
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -135,10 +135,10 @@ class _BottomSheetVoiceState extends State<BottomSheetVoice> {
 
   Widget hintText() {
     return const Text(
-      '..................',
+      '..........................',
       style: TextStyle(
         fontSize: 16,
-        color: Colors.grey,
+        color: Colors.yellow,
       ),
     );
   }
@@ -183,14 +183,14 @@ class _BottomSheetVoiceState extends State<BottomSheetVoice> {
             ),
             SizedBox(width: 8),
             Text(
-              'Bạn chưa cấp quyền cho ứng dụng',
+              'You have not allowed for app',
               style: TextStyle(color: Colors.white, fontSize: 15),
             ),
           ],
         ),
         const SizedBox(height: 16),
         _buttonBase(
-            text: 'Cấp quyền',
+            text: 'Allow',
             onPressed: _initSpeech,
             colour: Colors.blue,
             isCheckTextEmpty: false)
@@ -210,16 +210,16 @@ class _BottomSheetVoiceState extends State<BottomSheetVoice> {
   }
 
   Widget _buttonClear() {
-    return _buttonBase(text: 'Xóa', onPressed: _onClear, colour: Colors.red);
+    return _buttonBase(text: 'Delete', onPressed: _onClear, colour: Colors.red);
   }
 
   Widget _buttonCopy() {
     return _buttonBase(
-        text: 'Sao chép', onPressed: _onCopy, colour: Colors.blue);
+        text: 'Copy', onPressed: _onCopy, colour: Colors.blue);
   }
 
   Widget _buttonSend() {
-    return _buttonBase(text: 'Gửi', onPressed: _onSend, colour: Colors.green);
+    return _buttonBase(text: 'Send', onPressed: _onSend, colour: Colors.green);
   }
 
   Widget _buttonClose() {

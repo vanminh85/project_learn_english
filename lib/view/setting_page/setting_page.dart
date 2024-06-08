@@ -1,9 +1,6 @@
-import 'package:chatgpt/data/constant.dart';
 import 'package:chatgpt/model/language_listen_model.dart';
 import 'package:chatgpt/model/language_speak_model.dart';
-import 'package:chatgpt/model/models_model.dart';
 import 'package:chatgpt/view/login_view/login_view.dart';
-import 'package:chatgpt/view/setting_page/components/bottom_sheet_setting.dart';
 import 'package:chatgpt/view/setting_page/components/setting_button_logout.dart';
 import 'package:chatgpt/view/setting_page/components/setting_dropdown.dart';
 import 'package:chatgpt/view/setting_page/components/setting_slider.dart';
@@ -41,7 +38,7 @@ class SettingPage extends ModalRoute {
           'Setting',
           style: TextStyle(
             fontSize: 18,
-            color: Colors.red,
+            color: Colors.white,
           ),
           ),
       ),
@@ -60,7 +57,7 @@ class SettingPage extends ModalRoute {
 
   Widget bottom(BuildContext context) {
     return SettingButton(
-        text: 'Đăng xuất',
+        text: 'Logout',
         color: Colors.red,
         onPressed: () {
           context.read<SettingPageController>().logout().whenComplete(() {
@@ -74,7 +71,7 @@ class SettingPage extends ModalRoute {
   List<Widget> _listWidget(BuildContext context) {
     final controller = Provider.of<SettingPageController>(context);
     return [
-      SettingDropdown<ModelsModel>(
+      /*SettingDropdown<ModelsModel>(
           label: 'Chọn model:',
           onChanged: (p0) {
             if (p0 != null) {
@@ -83,9 +80,9 @@ class SettingPage extends ModalRoute {
           },
           list: controller.listModelsModel,
           value: controller.currentModel,
-          textDropdown: (v) => v.root),
+          textDropdown: (v) => v.root),*/
       SettingDropdown<LanguageListenModel>(
-        label: 'Chọn ngôn ngữ nghe:',
+        label: 'Language for listening:',
         list: controller.listLanguageListen,
         value: controller.currentLanguageListen,
         onChanged: ((p0) {
@@ -96,7 +93,7 @@ class SettingPage extends ModalRoute {
         textDropdown: (model) => model.displayName,
       ),
       SettingDropdown<LanguageSpeakModel>(
-        label: 'Chọn ngôn ngữ nói:',
+        label: 'Language for speaking:',
         list: controller.listLanguageSpeak,
         value: controller.currentLanguageSpeak,
         onChanged: ((p0) {
@@ -107,15 +104,15 @@ class SettingPage extends ModalRoute {
         textDropdown: (model) => model.name,
       ),
       SettingSlider(
-          label: 'Độ cao:',
+          label: 'Pitch:',
           value: controller.pitch,
           onchanged: (v) => controller.pitch = v),
       SettingSlider(
-          label: 'Âm lượng:',
+          label: 'Volume:',
           value: controller.volumn,
           onchanged: (v) => controller.volumn = v),
       SettingSlider(
-          label: 'Tốc độ:',
+          label: 'Speed:',
           value: controller.rate,
           onchanged: (v) => controller.rate = v),
       SettingSwitch(
@@ -123,33 +120,10 @@ class SettingPage extends ModalRoute {
           onChanged: (v) {
             controller.autoChatReponse = v;
           },
-          label: 'Tự động phản hồi âm thanh:'),
+          label: 'Auto response:'),
       //support(context)
     ];
   }
-
- /* Widget support(BuildContext context) {
-    return SettingButton(
-        onPressed: () {
-          showBottom(context);
-        },
-        text: 'Ủng hộ');
-  }*/
-
-
-
-  /*void showBottom(BuildContext context) {
-
-    showModalBottomSheet<void>(
-        context: context,
-        backgroundColor: scaffoldBackgroundColor,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16), topRight: Radius.circular(16))),
-        builder: (context) {
-          return const BottomSheetSetting();
-        });
-  }*/
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,

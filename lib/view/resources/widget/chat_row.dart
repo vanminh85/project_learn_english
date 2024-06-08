@@ -34,12 +34,12 @@ class ChatRow extends StatelessWidget {
             Expanded(
                 child: TextWidget(
                 label: chatModel.msg,
-                  color: Color.fromARGB(255, 229, 212, 12),
+                  color: Colors.white,
             )),
             IconButton(
                 onPressed: onPressed, icon: const Icon(
               Icons.volume_down,
-            color: Colors.white,
+            color: Colors.brown,
             ))
           ],
         ),

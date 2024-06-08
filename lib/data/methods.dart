@@ -113,21 +113,7 @@ class Methods {
     return fileName;
   }
 
-  static String preparePhone(String phone) {
-    String phoneNumber = phone;
-
-    if (phone.startsWith('0')) {
-      phoneNumber = '+84${phone.substring(1)}';
-    } else if (phone.startsWith('84')) {
-      phoneNumber = '+$phone';
-    } else if (!phone.startsWith('+84')) {
-      phoneNumber = '+84$phone';
-    }
-
-    return phoneNumber;
-  }
-
-  static List<int> getListInt(Map? data, String key) {
+    static List<int> getListInt(Map? data, String key) {
     List<int> lst = [];
     if (data == null) return lst;
     try {
